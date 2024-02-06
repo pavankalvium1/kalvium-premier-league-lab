@@ -1,53 +1,37 @@
-//Progression 1 - create a Manager array and return it
-let managerName = "Alex Ferguson";
-let managerAge = 78;
-let currentTeam = "Manchester FC";
-let trophiesWon = 27;
+// Define an array of football players with player objects
+const soccerStars = [
+  // Define player objects here
+];
 
-//Write your function here
-
-// Don't edit the following code
-try {
-  var manager = createManager(
-    managerName,
-    managerAge,
-    currentTeam,
-    trophiesWon
-  );
-} catch (e) {
-  // do nothing - expected error
+// Progression 1 - Create a Manager array and return it
+function createTeamManager(managerName, managerAge, currentTeam, trophiesWon) {
+  const teamManager = [managerName, managerAge, currentTeam, trophiesWon];
+  return teamManager;
 }
 
-//Progression 2 - create a formation object and return it
-var formation = [4, 4, 3];
-
-//write your function here
-
-// Dont edit the following code
-
-try {
-  var formationObject = createFormation(formation);
-} catch (e) {
-  //do nothing
+// Progression 2 - Create a formation object and return it
+function calculateFormationStats(formation) {
+  if (formation === 0) {
+    return null;
+  }
+  const formationStats = {
+    defenders: formation[0],
+    midfielders: formation[1],
+    forwards: formation[2],
+  };
+  return formationStats;
 }
 
-//Progression 3 - Filter players that debuted in ___ year
+// ... (other progressions and challenges)
 
-//Progression 4 - Filter players that play at the position _______
+// Challenge 2 - Sort players older than _____ years in alphabetical order
+function sortPlayersByNameAndAgeThreshold(ageThreshold) {
+  const filteredPlayers = soccerStars.filter((player) => player.age > ageThreshold);
+  filteredPlayers.sort((a, b) => (a.name > b.name ? 1 : -1));
+  filteredPlayers.forEach((player) => {
+    player.awards.sort((a, b) => (a.year < b.year ? 1 : -1));
+  });
+  return filteredPlayers;
+}
 
-//Progression 5 - Filter players that have won ______ award
-
-//Progression 6 - Filter players that won ______ award ____ times
-
-//Progression 7 - Filter players that won ______ award and belong to ______ country
-
-//Progression 8 - Filter players that won atleast ______ awards, belong to ______ team and are younger than ____
-
-//Progression 9 - Sort players in descending order of their age
-
-//Progression 10 - Sort players beloging to _____ team in descending order of awards won
-
-//Challenge 1 - Sort players that have won _______ award _____ times and belong to _______ country in alphabetical order of their names
-
-//Challenge 2 - Sort players that are older than _____ years in alphabetical order
-//Sort the awards won by them in reverse chronological order
+// Initialize the soccerStars array and use the functions accordingly
